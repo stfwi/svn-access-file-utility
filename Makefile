@@ -43,7 +43,7 @@ test: binary
 	@echo "#--" >>./build/test.log 2>&1
 	./build/$(BINARY) -v user --json test/data/example-access nobody@example.com >>./build/test.log 2>&1
 
-build/$(BINARY): src/main.djs
+build/$(BINARY): src/main.js
 	@mkdir -p build
 	@rm -f $@
 	@$(DJS) -e "sys.app.attachment.write('$@', fs.readfile('$<'))"
