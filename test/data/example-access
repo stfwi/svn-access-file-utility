@@ -1,0 +1,45 @@
+#
+# Comment
+#
+[aliases]
+nobody = nobody@example.com
+
+[groups]
+everyone = admin, $nobody, somebody@example.com, Utis
+admin = admin, Utis
+user = admin, nobody@example.com, somebody@example.com, Utis
+
+ProjectName-project_admin = Utis
+ProjectName-project_assignable = Utis, $nobody
+ProjectName-project_approver = somebody@example.com
+ProjectName-project_user = Utis, nobody@example.com, somebody@example.com
+
+
+[/prj_group/ProjectName/.polarion]
+@admin = rw
+@ProjectName-project_admin = rw
+@ProjectName-project_approver = r
+@ProjectName-project_assignable = r
+
+[/prj_group/ProjectName/.polarion/pages/spaces]
+@ProjectName-project_assignable = rw
+
+[/prj_group/ProjectName/.polarion/planning/plans]
+@ProjectName-project_assignable = rw
+
+[/prj_group/ProjectName/.polarion/reqif]
+@ProjectName-project_assignable = rw
+
+[/prj_group/ProjectName/.polarion/testing/testruns]
+@ProjectName-project_assignable = rw
+
+[/prj_group/ProjectName/.polarion/tracker/baselines]
+@ProjectName-project_assignable = rw
+
+#[/commented/out/section]
+#@section-project_assignable = rw
+
+[/prj_group/ProjectName/.polarion/tracker/workitems]
+@ProjectName-project_approver = rw
+@ProjectName-project_assignable = rw
+#@ProjectName-commented_out = rw

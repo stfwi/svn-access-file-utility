@@ -1,0 +1,12 @@
+/build
+/tmp
+/dev.*
+*.tmp
+.DS_Store
+Desktop.ini
+*~
+~*
+.*
+!.gitignore
+!.gitattributes
+!.editorconfig
